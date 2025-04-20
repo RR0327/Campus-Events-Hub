@@ -35,11 +35,17 @@ Events are sorted into upcoming and past categories for easy access.
 - *Smart Notifications & Extras*:
 
 • *Registration Confirmation Emails*: Sends emails to confirm successful sign-ups.
+
 • *Countdown Timers for Anticipation*: Real-time countdowns to the event start date.
+
 • *Digital Ticketing via QR Codes*: Generates QR codes for event entry.
+
 • *Pre-Event Approval Process*: Requires administrative consent before events are published.
+
 • *User-Friendly Cancellation Option*: Allows students to withdraw from events if necessary.
+
 • *Event Discovery Tools*: Search by event or club names and filter by categories.
+
 • *Responsive Interface Design*: Adaptable layout for optimal viewing on any device.
 
 ---
@@ -93,17 +99,23 @@ Campus-Events-Hub/
 🤝 Contribution 
 
 We welcome contributions!
+
 Please open issues and submit pull requests with clear, concise commits.
 
 🧑‍💻 Developed By
+
 Campus-Events-Hub Development Team
+
 Md Rakibul Hassan, Md Tahsin Azad Shaikat, Dipa Barua
 
 📄 License
+
 This project is licensed under the MIT License.
 
 🔥 Project Status
+
 Campus-Events-Hub is actively under development and growing every day.
+
 Stay tuned for more awesome updates!
 
-
+---

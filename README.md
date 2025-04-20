@@ -14,26 +14,38 @@ all in a beautifully designed, mobile-responsive platform.
 
 ## ✨ Key Features
 
-- 👥 **Dynamic Role-Based Login**: Students and Club Admins are intelligently redirected to personalized dashboards after login.
-- 📝 **Student Event Registration**: Students can browse and register for exciting campus events easily.
-- 🏫 **Club Admin Event Creation**: Club Admins can create new events with title, description, date, max participants, and event poster upload.
-- 🎟️ **Smart Registration Limit Handling**: Events close automatically when maximum seats are filled.
-- 🟢🔴 **Live Event Status**: Events dynamically show "Open" or "Closed" status based on seat availability and event date.
-- 📅 **Upcoming and Past Events Separation**: Cleanly organizes upcoming vs past events for easy navigation.
-- 📋 **Personalized Dashboards**:  
-  - Students ➔ *My Registered Events*  
-  - Club Admins ➔ *My Created Events*
-- 📩 **Email Notifications (Optional)**: Sends confirmation emails upon successful registration.
-- ⏳ **Live Countdown Timers (Optional)**: Real-time countdown to event start date.
-- 📲 **QR Code Ticket Generation (Optional)**: Generate QR codes for registered event entries.
-- ✅ **Event Approval Workflow (Optional)**: Events require admin approval before becoming public.
-- ❌ **Registration Cancellation (Optional)**: Students can cancel registrations if needed.
-- 🔍 **Search and Filter Events**: Search by event name or club name, filter by categories.
-- 🎨 **Fully Responsive UI**: Works beautifully on desktops, tablets, and mobile devices.
+- *Custom Dashboard Navigation*:
+Smart login directs students and club admins to their personalized dashboards.
+
+- *Event Enrollment Made Simple*:
+Students can easily browse and sign up for campus activities of interest.
+
+- *Event Creation Suite for Admins*:
+Club admins can set up new events with comprehensive details like title, description, date, capacity, and visuals.
+
+- *Capacity Management System*:
+Events automatically close registrations when the participant limit is reached.
+
+- *Dynamic Participation Status*:
+Events show live status indicators indicating whether they are "Open" or "Closed."
+
+- *Chronological Event Organization*:
+Events are sorted into upcoming and past categories for easy access.
+
+- *Smart Notifications & Extras*:
+
+• *Registration Confirmation Emails*: Sends emails to confirm successful sign-ups.
+• *Countdown Timers for Anticipation*: Real-time countdowns to the event start date.
+• *Digital Ticketing via QR Codes*: Generates QR codes for event entry.
+• *Pre-Event Approval Process*: Requires administrative consent before events are published.
+• *User-Friendly Cancellation Option*: Allows students to withdraw from events if necessary.
+• *Event Discovery Tools*: Search by event or club names and filter by categories.
+• *Responsive Interface Design*: Adaptable layout for optimal viewing on any device.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack![logo-O35E636P](https://github.com/user-attachments/assets/6d2db061-ab43-44a3-8156-2d3f1bb42837)
+
 
 ```
 | Frontend | Backend | Database | DevOps Tools |

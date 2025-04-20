@@ -44,8 +44,7 @@ Events are sorted into upcoming and past categories for easy access.
 
 ---
 
-## 🛠️ Tech Stack![logo-O35E636P](https://github.com/user-attachments/assets/6d2db061-ab43-44a3-8156-2d3f1bb42837)
-
+## 🛠️ Tech Stack
 
 ```
 | Frontend | Backend | Database | DevOps Tools |

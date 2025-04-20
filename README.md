@@ -84,6 +84,8 @@ Campus-Events-Hub/
 
 - Profile Page (Registered / Created Events)
 
+---
+
 📈 Future Enhancements
 
 - Event Categories Expansion
@@ -96,11 +98,15 @@ Campus-Events-Hub/
 
 - API-based React SPA (Single Page Application) Version
 
+---
+
 🤝 Contribution 
 
 We welcome contributions!
 
 Please open issues and submit pull requests with clear, concise commits.
+
+---
 
 🧑‍💻 Developed By
 
@@ -108,9 +114,13 @@ Campus-Events-Hub Development Team
 
 Md Rakibul Hassan, Md Tahsin Azad Shaikat, Dipa Barua
 
+---
+
 📄 License
 
 This project is licensed under the MIT License.
+
+---
 
 🔥 Project Status
 

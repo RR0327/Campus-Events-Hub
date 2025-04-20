@@ -1,8 +1,7 @@
 <h1 align="center"> 🎓 Campus-Events-Hub </h1>
 
 Campus-Events-Hub is a modern, full-stack **University Event Management System**.  
-It empowers students to register for events and enables club admins to create, manage, and monitor events —  
-all in a beautifully designed, mobile-responsive platform.
+It empowers students to register for events and enables club admins to create, manage, and monitor events —  all in a beautifully designed, mobile-responsive platform.
 
 🚀 Built with:  
 - **Frontend**: React.js + TailwindCSS  

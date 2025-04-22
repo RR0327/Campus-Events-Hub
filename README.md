@@ -1,6 +1,6 @@
-<h1 align="center"> 🎓 Campus-Events-Hub </h1>
+<h1 align="center"> 🎓 Campus Event Management System (CEMS) </h1>
 
-Campus-Events-Hub is a modern, full-stack **University Event Management System**.  
+Campus Event Management System (CEMS) is a modern, full-stack **University Event Management System**.  
 It empowers students to register for events and enables club admins to create, manage, and monitor events —  all in a beautifully designed, mobile-responsive platform.
 
 🚀 Built with:  
@@ -62,7 +62,7 @@ Events are sorted into upcoming and past categories for easy access.
 ## 🗂️ Project Structure
 
 ```
-Campus-Events-Hub/
+Campus Event Management System (CEMS)/
 ├── backend/             # Django Backend (Django + PostgreSQL)
 ├── frontend/            # React Frontend (React + TailwindCSS)
 ├── docker-compose.yml   # Docker Compose Setup
@@ -109,7 +109,7 @@ Please open issues and submit pull requests with clear, concise commits.
 
 🧑‍💻 Developed By
 
-Campus-Events-Hub Development Team
+Campus Event Management System (CEMS) Development Team
 
 Md Rakibul Hassan, Md Tahsin Azad Shaikat, Dipa Barua
 
@@ -123,7 +123,7 @@ This project is licensed under the MIT License.
 
 🔥 Project Status
 
-Campus-Events-Hub is actively under development and growing every day.
+Campus Event Management System (CEMS) is actively under development and growing every day.
 
 Stay tuned for more awesome updates!
 

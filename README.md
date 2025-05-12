@@ -4,10 +4,9 @@ Campus Event Management System (CEMS) is a modern, full-stack **University Event
 It empowers students to register for events and enables club admins to create, manage, and monitor events —  all in a beautifully designed, mobile-responsive platform.
 
 🚀 Built with:  
-- **Frontend**: React.js + TailwindCSS  
+- **Frontend**: HTML, CSS, TailwindCSS, JavaScript  
 - **Backend**: Django (Python)  
-- **Database**: PostgreSQL (Dockerized)  
-- **Containerization**: Docker + Docker Compose  
+- **Database**: sqlite3   
 
 ---
 
@@ -54,8 +53,8 @@ Events are sorted into upcoming and past categories for easy access.
 ```
 | Frontend | Backend | Database | DevOps Tools |
 |:--------:|:-------:|:--------:|:------------:|
-| React.js | Django  | PostgreSQL | Docker |
-| TailwindCSS | Django ORM |  | Docker Compose |
+| React.js | Django  | sqlite3 |          |
+| TailwindCSS | Django ORM |  |          |
 ```
 ---
 
@@ -63,9 +62,8 @@ Events are sorted into upcoming and past categories for easy access.
 
 ```
 Campus Event Management System (CEMS)/
-├── backend/             # Django Backend (Django + PostgreSQL)
-├── frontend/            # React Frontend (React + TailwindCSS)
-├── docker-compose.yml   # Docker Compose Setup
+├── backend/             # Django Backend (Django + sqlite3)
+├── frontend/            # React Frontend (HTML, CSS, TailwindCSS, JavaScript)
 ├── README.md            # Project Documentation
 ```
 

@@ -53,8 +53,10 @@ Events are sorted into upcoming and past categories for easy access.
 ```
 | Frontend | Backend | Database | DevOps Tools |
 |:--------:|:-------:|:--------:|:------------:|
-| React.js | Django  | sqlite3 |          |
-| TailwindCSS | Django ORM |  |          |
+| HTML     | Django  | sqlite3  |              |
+| CSS      | Django ORM |       |              |
+| TailwindCSS |      |          |              |
+| JavaScript |       |          |              |
 ```
 ---
 

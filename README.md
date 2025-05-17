@@ -1,4 +1,8 @@
-<h1 align="center"> 🎓 Campus Event Management System (CEMS) </h1>
+<p align="center">
+  <img src="CEMS.png" width="300" alt="Campus Event Management System Logo">
+</p>
+
+## <h1 align="center"> 🎓 Campus Event Management System (CEMS) </h1>
 
 Campus Event Management System (CEMS) is a modern, full-stack **University Event Management System**.  
 It empowers students to register for events and enables club admins to create, manage, and monitor events —  all in a beautifully designed, mobile-responsive platform.

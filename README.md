@@ -51,12 +51,12 @@ Events are sorted into upcoming and past categories for easy access.
 ## 🛠️ Tech Stack
 
 ```
-| Frontend | Backend | Database | DevOps Tools |
-|:--------:|:-------:|:--------:|:------------:|
-| HTML     | Django  | sqlite3  |              |
-| CSS      | Django ORM |       |              |
-| TailwindCSS |      |          |              |
-| JavaScript |       |          |              |
+| Frontend | Backend | Database |
+|:--------:|:-------:|:--------:|
+| HTML     | Django  | sqlite3  |
+| CSS      | Django ORM |       |
+| TailwindCSS |      |          |
+| JavaScript |       |          |
 ```
 ---
 
@@ -65,7 +65,7 @@ Events are sorted into upcoming and past categories for easy access.
 ```
 Campus Event Management System (CEMS)/
 ├── backend/             # Django Backend (Django + sqlite3)
-├── frontend/            # React Frontend (HTML, CSS, TailwindCSS, JavaScript)
+├── frontend/            # Frontend (HTML, CSS, TailwindCSS, JavaScript)
 ├── README.md            # Project Documentation
 ```
 

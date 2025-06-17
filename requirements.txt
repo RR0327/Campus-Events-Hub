@@ -1,0 +1,5 @@
+Django==5.2.1
+django-extensions==4.1
+pillow==11.2.1
+python-decouple==3.8
+qrcode==8.2

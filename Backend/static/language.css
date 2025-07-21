@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #F5F5F5;
+  padding: 50px 20px;
+  text-align: center;
+  color: #2F4F4F;
+}
+
+header .hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header .hero h1 span {
+  color: #4CAF50;
+}
+
+/* Shared Section Layout */
+.intro,
+.hackathon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  max-width: 1300px;
+  margin: auto;
+  gap: 3rem;
+  flex-wrap: nowrap;
+}
+
+.hackathon-content {
+  flex: 1;
+  text-align: left;
+}
+
+.hackathon-content h2,
+.hackathon-content .highlight-text {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  width: 100%;
+  color: #263287;
+  font-weight: 600;
+}
+
+.hackathon-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.hackathon-content p:last-child {
+  font-style: italic;
+  color: green;
+}
+
+/* Image Container */
+.image-container,
+.hackathon-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img,
+.hackathon-image img {
+  width: 100%;
+  max-width: 600px;
+  height: 320px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Zoom on Hover */
+.image-container img:hover,
+.hackathon-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #2F4F4F;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .intro,
+  .hackathon {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hackathon-content {
+    text-align: center;
+  }
+
+  .hackathon-content h2,
+  .hackathon-content .highlight-text {
+    font-size: 1.4rem;
+  }
+
+  .image-container img,
+  .hackathon-image img {
+    width: 100%;
+    height: auto;
+ }
+}

@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Campus Event Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .signup-card {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .signup-card h3 {
+      margin-bottom: 30px;
+      text-align: center;
+      color: #333;
+    }
+
+    .form-control {
+      border-radius: 10px;
+    }
+
+    .btn-success {
+      background-color: #43cea2;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .btn-success:hover {
+      background-color: #36b89c;
+    }
+
+    .text-muted a {
+      text-decoration: none;
+      color: #185a9d;
+    }
+
+    .text-muted a:hover {
+      text-decoration: underline;
+    }
+
+    .messages-container {
+      margin-top: 20px;
+      padding: 10px;
+    }
+
+    .message {
+      color: red;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="signup-card">
+    <h3>Create Your Account</h3>
+    <div class="messages-container">
+    {% if messages %}
+      <div>
+        {% for message in messages %}
+            <div class="message">*{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+    <form method="POST" action="{% url 'signup' %}">
+      {% csrf_token %}
+
+      <div class="mb-3">
+        <label for="id_fullname" class="form-label">Full Name</label>
+        <input type="text" id="id_fullname" name="full_name" class="form-control" placeholder="John Doe" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="id_email" class="form-label">Email Address</label>
+        <input type="email" id="id_email" name="email" class="form-control" placeholder="example@domain.com" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="id_studentid" class="form-label">Student ID</label>
+        <input type="text" id="id_studentid" name="studentid" class="form-control" placeholder="Ex: 190104001" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="id_department" class="form-label">Department</label>
+        <select class="form-control" id="id_department" name="department" required>
+          <option value="" disabled selected>Select your department</option>
+          <option value="CSE">CSE</option>
+          <option value="EEE">EEE</option>
+          <option value="BBA">BBA</option>
+          <option value="ENG">ENG</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="role" class="form-label">Role</label>
+        <select class="form-control" id="role" name="role" required>
+          <option value="" disabled selected>Select your role</option>
+          <option value="student">Student</option>
+          <option value="club_admin">Club Admin</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="id_password1" class="form-label">Password</label>
+        <input type="password" id="id_password1" name="password1" class="form-control" placeholder="Create a password" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="id_password2" class="form-label">Confirm Password</label>
+        <input type="password" id="id_password2" name="password2" class="form-control" placeholder="Re-type your password" required>
+      </div>
+
+      <div class="d-grid mb-3">
+        <button type="submit" class="btn btn-success">Sign Up</button>
+      </div>
+
+      <div class="text-center text-muted">
+        Already have an account? <a href="{% url 'login' %}">Login here</a>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  document.querySelector("form").addEventListener("submit", function () {
+    const btn = document.querySelector("button[type='submit']");
+    btn.disabled = true;
+    btn.textContent = "Processing...";
+  });
+</script>
+</body>
+
+</html>

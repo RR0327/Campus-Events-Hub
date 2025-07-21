@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAIUST Law Club</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .header-section {
+            padding: 80px 20px;
+            background-color: #2c3e50;
+            /* Dark blue shade for law theme */
+            color: white;
+            text-align: center;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .header-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .img-section {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .img-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            padding: 20px;
+            background-color: #34495e;
+            /* Slightly lighter dark blue */
+            color: white;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #ffd700;
+            /* Gold for URL to stand out */
+            text-decoration: underline;
+        }
+
+        @media(max-width: 768px) {
+            .header-section h1 {
+                font-size: 2rem;
+            }
+
+            .header-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        {% include 'navbar.html' %}
+    </header>
+
+    <!-- Header / Banner -->
+    <div class="header-section">
+        <h1>Welcome to BAIUST Law Club</h1>
+        <p>Founded in 2019, the BAIUST Law Club promotes legal awareness through seminars, moot courts, debates, and the
+            observance of national and international days such as Environment Day, Constitution Day, and Human Rights
+            Day. Our motto: "Lawyers as Social Engineers."</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-section">
+        <h2>About BAIUST Law Club</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="img-section">
+                    <!-- Update the static image path accordingly -->
+                    <img src="{% static 'images/law_club_logo.jpg' %}" alt="Law Club Logo" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="description">
+                    BAIUST Law Club, launched in 2019, has been actively organizing seminars, moot court competitions,
+                    documentaries, and discussions to foster legal awareness among students and faculty. The club
+                    observes various significant days including Environment Day, Human Rights Day, and Consumer Rights
+                    Day, aiming to educate and promote social justice.
+                </p>
+                <p class="description">
+                    Driven by the moto "Lawyers as Social Engineers", the club strives to develop a legal mindset among
+                    students, promote human rights, and encourage active participation in societal legal matters. The
+                    club continues to grow by attracting new members and expanding its activities.
+                </p>
+            </div>
+        </div>
+
+        <!-- Further details link -->
+        <div class="text-center mt-4">
+            <a href="https://baiust.ac.bd/baiust-law-club/" target="_blank" class="btn btn-primary btn-lg">
+                Visit Further Details
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; {{ now.year }} BAIUST Law Club. All rights reserved.
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

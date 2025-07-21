@@ -87,6 +87,16 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': 'CampusEvent',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+# }
 # --- AUTH --- #
 AUTH_USER_MODEL = 'events.CustomUser'
 LOGIN_REDIRECT_URL = '/dashboard/'
@@ -115,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Dhaka'
 
 USE_I18N = True
 
@@ -144,3 +154,5 @@ DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_REDIRECT_URL = 'Home'

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Countdown</title>
+  <link rel="stylesheet" href="coundown.css">
+</head>
+
+<body>
+
+<div class="countdown-wrapper">
+  <!-- Left Section -->
+  <div class="event-details">
+    <h2>📅 Upcoming Event</h2>
+
+    {% if upcoming_event %}
+      {% comment %} <p><strong>{{ upcoming_event.title }}</strong></p> {% endcomment %}
+      <p>
+         <p><strong>{{ upcoming_event.title }}</strong> is coming! Join us for workshops, games, and more!</p>
+      </p>
+      <a href="{% url 'event_detail' upcoming_event.id %}" class="register-btn">Register now</a>
+    {% else %}
+      <p>No upcoming events found.</p>
+    {% endif %}
+  </div>
+
+  <!-- Right Section -->
+  <div class="timer-container">
+    <h2>TIME REMAINING</h2>
+    <div class="timer">
+      <div class="time-box" id="days"><span>00</span><label>DAYS</label></div>
+      <div class="time-box" id="hours"><span>00</span><label>HOURS</label></div>
+      <div class="time-box" id="minutes"><span>00</span><label>MINUTES</label></div>
+      <div class="time-box" id="seconds"><span>00</span><label>SECONDS</label></div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>

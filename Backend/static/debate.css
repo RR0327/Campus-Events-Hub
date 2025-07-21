@@ -1,0 +1,101 @@
+/* Base Setup */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Section Styles */
+.debate-section {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background-color: #fff;
+}
+.debate-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #5f0f67; /* A rich purple color */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.debate-section h2 {
+  font-size: 2.8rem;
+  color: #4b0082;
+  margin-bottom: 2.5rem;
+}
+
+/* Card Container */
+.debate-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Design */
+.debate-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  text-align: left;
+  position: relative;
+}
+
+.debate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+/* Icon Styles */
+.icon {
+  font-size: 2.5rem;
+  color: #5f0f67;
+  margin-bottom: 1rem;
+}
+
+/* Card Content */
+.debate-card h3 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.debate-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+.debate-card ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.debate-card ul li {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 5px;
+  list-style-type: disc;
+}
+
+
+/* Responsive Typography */
+@media (max-width: 600px) {
+  .debate-section h2 {
+    font-size: 2rem;
+  }
+
+  .debate-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .debate-card {
+    padding: 1.5rem;
+    }
+}

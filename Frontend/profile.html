@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | Campus Event Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Frontend/dashboard.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../Frontend/index.html">Home</a>
+            <a href="#" class="active">Dashboard</a>
+            <!-- <div class="dropdown">
+                <a href="#">Register</a>
+                <div class="dropdown-content">
+                    <a href="../login.html">Login</a>
+                    <a href="../signup.html">Signup</a>
+                </div>
+            </div> -->
+            <div class="dropdown">
+                <a href="#">Clubs</a>
+                <div class="dropdown-content">
+                    <a href="#">BAIUST Computer Club</a>
+                    <a href="#">BAIUST EEE Club</a>
+                    <a href="#">BAIUST Law Club</a>
+                    <a href="#">BAIUST Language Club</a>
+                </div>
+            </div>
+            <a href="login.html">Logout</a>
+
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-avatar">
+                    <img src="../Image/default-avatar.jpg" alt="Profile Picture" id="profileImg">
+                </div>
+                <h3 id="studentName">John Doe</h3>
+                <p id="studentId">ID: 190104001</p>
+                <p id="department">CSE Department</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active" data-tab="overview">
+                    <span class="icon">📊</span> Overview
+                </a>
+                <a href="#events" class="nav-item" data-tab="events">
+                    <span class="icon">🎪</span> My Events
+                </a>
+                <a href="#achievements" class="nav-item" data-tab="achievements">
+                    <span class="icon">🏆</span> Achievements
+                </a>
+                <a href="#clubs" class="nav-item" data-tab="clubs">
+                    <span class="icon">👥</span> My Clubs
+                </a>
+                <a href="#settings" class="nav-item" data-tab="settings">
+                    <span class="icon">⚙️</span> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="welcome-section">
+                    <h1>Welcome back, <span id="welcomeName">John</span>!</h1>
+                    <p>Here's what's happening with your campus activities</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🎪</div>
+                        <div class="stat-info">
+                            <h3 id="totalEvents">12</h3>
+                            <p>Events Attended</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-info">
+                            <h3 id="totalAchievements">5</h3>
+                            <p>Achievements</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h3 id="totalClubs">3</h3>
+                            <p>Club Memberships</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-info">
+                            <h3 id="totalPoints">284</h3>
+                            <p>Activity Points</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activities">
+                    <h2>Recent Activities</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">🎪</div>
+                            <div class="activity-details">
+                                <h4>Registered for Tech Fest 2025</h4>
+                                <p>2 days ago</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">🏆</div>
+                            <div class="activity-details">
+                                <h4>Won Coding Competition</h4>
+                                <p>1 week ago</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">👥</div>
+                            <div class="activity-details">
+                                <h4>Joined Computer Club</h4>
+                                <p>2 weeks ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events Tab -->
+            <div id="events" class="tab-content">
+                <h1>My Events</h1>
+                <div class="events-filter">
+                    <button class="filter-btn active" data-filter="all">All Events</button>
+                    <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                    <button class="filter-btn" data-filter="attended">Attended</button>
+                    <button class="filter-btn" data-filter="registered">Registered</button>
+                </div>
+                
+                <div class="events-grid">
+                    <div class="event-card" data-status="upcoming">
+                        <img src="../Image/cse fest.jpg" alt="Tech Fest">
+                        <div class="event-info">
+                            <h3>Tech Fest 2025</h3>
+                            <p class="event-date">📅 June 15, 2025</p>
+                            <p class="event-location">📍 Main Auditorium</p>
+                            <span class="event-status upcoming">Upcoming</span>
+                        </div>
+                    </div>
+                    <div class="event-card" data-status="attended">
+                        <img src="../Image/coding.jpg" alt="Coding Competition">
+                        <div class="event-info">
+                            <h3>Coding Competition</h3>
+                            <p class="event-date">📅 May 20, 2025</p>
+                            <p class="event-location">📍 Computer Lab</p>
+                            <span class="event-status attended">Attended</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements Tab -->
+            <div id="achievements" class="tab-content">
+                <h1>My Achievements</h1>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🥈</div>
+                        <h3>2nd Place - Coding Contest</h3>
+                        <p>National Level Competition</p>
+                        <span class="achievement-date">May 2025</span>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🏆</div>
+                        <h3>Event Organizer</h3>
+                        <p>CSE Fest 2025</p>
+                        <span class="achievement-date">April 2025</span>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">📚</div>
+                        <h3>Workshop Completion</h3>
+                        <p>Technical English Communication</p>
+                        <span class="achievement-date">March 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clubs Tab -->
+            <div id="clubs" class="tab-content">
+                <h1>My Clubs</h1>
+                <div class="clubs-grid">
+                    <div class="club-card">
+                        <div class="club-header">
+                            <h3>BAIUST Computer Club</h3>
+                            <span class="member-since">Member since Jan 2025</span>
+                        </div>
+                        <p>Active participation in coding events and workshops</p>
+                        <div class="club-stats">
+                            <span>👥 250 members</span>
+                            <span>🎪 12 events this year</span>
+                        </div>
+                    </div>
+                    <div class="club-card">
+                        <div class="club-header">
+                            <h3>BAIUST Language Club</h3>
+                            <span class="member-since">Member since Feb 2025</span>
+                        </div>
+                        <p>Improving communication and language skills</p>
+                        <div class="club-stats">
+                            <span>👥 180 members</span>
+                            <span>🎪 8 events this year</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settings" class="tab-content">
+                <h1>Settings</h1>
+                <div class="settings-sections">
+                    <div class="settings-section">
+                        <h3>Profile Information</h3>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" value="John Doe" id="settingsName">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" value="john.doe@student.baiust.edu.bd" id="settingsEmail">
+                            </div>
+                            <div class="form-group">
+                                <label>Department</label>
+                                <select id="settingsDepartment">
+                                    <option selected>CSE</option>
+                                    <option>EEE</option>
+                                    <option>BBA</option>
+                                    <option>ENG</option>
+                                </select>
+                            </div>
+                            <button type="button" class="save-btn">Save Changes</button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h3>Notifications</h3>
+                        <div class="notification-settings">
+                            <div class="setting-item">
+                                <label>Event Reminders</label>
+                                <input type="checkbox" checked>
+                            </div>
+                            <div class="setting-item">
+                                <label>Club Updates</label>
+                                <input type="checkbox" checked>
+                            </div>
+                            <div class="setting-item">
+                                <label>Achievement Notifications</label>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!--Footer-->
+
+
+  <footer class="modern-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="Image/logoreal.png" alt="Logo" class="logo">
+        <p>Simply #1 Real Estate Theme</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">List Layout</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="ri-map-pin-line"></i> 3015 Grand Ave, Coconut Grove, FL 12345</p>
+        <p><i class="ri-whatsapp-line"></i> +123-456-789</p>
+        <p><i class="ri-mail-line"></i> sales@example.com</p>
+      </div>
+
+      <div class="links">
+        <h4>connection</h4>
+        <ul>
+          <li>facebook</li>
+          <li>instagram</li>
+          <li>twitter</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025. All rights reserved.</p>
+      <p>Designed by YourTeamName</p>
+    </div>
+  </footer>
+
+    <script src="./dashboard.js">
+        if (!localStorage.getItem("isLoggedIn")) {
+    alert("Please login first!");
+    window.location.href = "login.html";
+  }
+    </script>
+</body>
+</html>

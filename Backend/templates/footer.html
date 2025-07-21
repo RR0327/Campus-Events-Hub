@@ -1,0 +1,106 @@
+<!-- Footer container -->
+<footer class="bg-dark text-light mt-5 pt-4 pb-2">
+    <div class="container">
+        <div class="row">
+
+            <!-- Info Section -->
+            <div class="col-lg-3 mb-3">
+                <h4>Info</h4>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'about' %}" class="text-light">About Us</a></li>
+                    <li><a href="{% url 'event_list' %}" class="text-light">Events</a></li>
+                    <li><a href="./projects.html" class="text-light">Projects</a></li>
+                    <li><a href="{% url 'contact' %}" class="text-light">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Explore Section -->
+            <div class="col-lg-3 mb-3">
+                <h4>Explore</h4>
+                <ul class="list-unstyled">
+                    <li><a href="./work.html" class="text-light">Work Experience</a></li>
+                    <li><a href="./skills.html" class="text-light">Skills</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal Section -->
+            <div class="col-lg-3 mb-3">
+                <h4>Legal</h4>
+                <ul class="list-unstyled">
+                    <li><a href="./terms.html" class="text-light">Terms & Conditions</a></li>
+                    <li><a href="./privacy.html" class="text-light">Privacy Policy</a></li>
+                    <li><a href="./disclaimer.html" class="text-light">Disclaimer</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Form -->
+            <div class="col-lg-3 mb-3">
+                <h4>Subscribe</h4>
+                <form action="#">
+                    <input type="email" class="form-control mb-2" placeholder="Your email" required>
+                    <button type="submit" class="btn btn-primary w-100">SUBSCRIBE</button>
+                </form>
+            </div>
+
+            <!-- Follow Me Social Icons -->
+            <div class="col-lg-3 mb-3 text-center">
+                <h4>Follow Me</h4>
+                <div class="d-flex justify-content-center gap-3 social-icons">
+                    <a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/campus.event.hub/" class="text-light"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/RR0327/Campus-Events-Hub" class="text-light"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Text -->
+        <div class="text-center mt-3">
+            <small>&copy; {{ now.year }} Campus Event Hub | All Rights Reserved</small>
+        </div>
+
+        <!-- Additional Line for "Under development" -->
+        <div class="text-center mt-2">
+            <small>This project is under development by Team <b>Tech_Thinkers</b></small>
+        </div>
+    </div>
+</footer>
+
+<!-- Add hover styles directly below your footer for effect -->
+<style>
+    /* Hover effect for footer links */
+    footer a {
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    footer a:hover {
+        color: #ffc107;
+        /* Gold/yellow shade on hover */
+        transform: translateY(-2px) scale(1.1);
+    }
+
+    /* Hover effect for social icons */
+    .social-icons a {
+        font-size: 1.5rem;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: #ffc107;
+        /* Change color on hover, matching theme */
+        transform: rotate(10deg) scale(1.2);
+    }
+
+    /* Optional: hover for the subscribe button */
+    .w-100.btn.btn-primary {
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .w-100.btn.btn-primary:hover {
+        background-color: #ffca28;
+        /* Lighter shade on hover */
+        transform: scale(1.05);
+    }
+</style>

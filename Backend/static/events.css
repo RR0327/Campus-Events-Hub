@@ -1,0 +1,543 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #ebe7e7;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    background: linear-gradient(135deg, #ffffff 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+
+}
+
+
+ 
+
+
+header nav {
+  /*background-color: #418ade;*/
+  padding: 30px;
+  margin: auto;
+}
+
+header nav a {
+  color: #040b13;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 8px 12px;
+  font-size:25px;
+
+}
+
+header nav a:hover {
+  background-color: #f5efef;
+  border-radius: 5px;
+}
+header nav a:hover,
+header nav a.active {
+    background: #3556e9;
+    color: white;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #444;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  border-radius: 5px;
+}
+.events-container h1{
+  padding: 10px 425px;
+  font-size: 2.5rem;
+  color: #090808;
+  margin: 40px 0 20px;
+  letter-spacing: 2px;
+  text-align: center;
+  
+}
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #666;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+header {
+  width: 1140px;
+  max-width: 80%;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+header a {
+  color: #eee;
+  margin-right: 40px;
+  font-size: large;
+  box-shadow: #000;
+  border-radius: 30px;
+}
+
+.logout-btn {
+    background-color: #f00; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #c00;
+}
+
+
+header nav a:hover,
+header nav a.active {
+    background: #667eea;
+    color: white;
+}
+
+/* Event Filters */
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filters input,
+.filters select {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.filters button {
+    padding: 10px 15px;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+    background-color: #4b6bb0;
+}
+
+/* Event Cards */
+.event-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.event-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+}
+
+.event-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.event-card .event-details {
+    padding: 20px;
+}
+
+.event-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.event-card .event-date {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.event-card .event-status {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.event-card .event-status.upcoming {
+    background-color: #e8f5e8;
+    color: #2d7d2d;
+}
+
+.event-card .event-status.attended {
+    background-color: #e8f2ff;
+    color: #2d5aa0;
+}
+
+/* Event Details Button */
+.event-card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.event-card .btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filters input,
+    .filters select,
+    .filters button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .event-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* creating event */
+
+
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #4b6bb0;
+}
+
+/* Event Detail Card */
+.event-detail-card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 100px auto 50px;
+}
+
+.event-detail-card h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.event-detail-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.event-detail-card p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.event-detail-card .event-date {
+  font-weight: bold;
+  color: #2d7d2d;
+}
+
+.event-detail-card .event-location {
+  font-weight: bold;
+  color: #2d5aa0;
+}
+
+.event-detail-card .event-category {
+  font-size: 1rem;
+  background-color: #43cea2;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.event-detail-card .btn-primary {
+  background-color: #43cea2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.event-detail-card .btn-primary:hover {
+  background-color: #36b89c;
+}
+
+footer.modern-footer {
+  background: #c7b9b9;
+  color: #161313;
+  font-family: 'Segoe UI', sans-serif;
+  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0% 100%);
+  padding: 60px 20px 30px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand {
+  flex: 1 1 200px;
+}
+
+.footer-brand img.logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.footer-links,
+.footer-contact,
+.footer-subscribe {
+  flex: 1 1 200px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.links ul {
+   list-style: none;
+}
+
+.footer-links a {
+  color: #1d1818;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #f4b400;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 20px;
+  font-size: 13px;
+  color: #0c0909;
+  border-top: 1px solid #151010;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-contact,
+  .footer-subscribe {
+    margin-top: 30px;
+  }
+
+  .footer-subscribe input {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+/* Green bar for open events */
+.event-status.open {
+    background-color: #28a745;  /* Green color */
+    color: white;
+    padding: 5px 10px;  /* Adjust padding */
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    max-width: 200px;  /* Set a max-width for better alignment */
+    margin: 10px 0;  /* Add some margin for spacing */
+    font-size: 14px;  /* Adjust font size */
+}
+
+/* Red bar for closed events */
+.event-status.closed {
+    background-color: #dc3545;  /* Red color */
+    color: white;
+    padding: 5px 10px;  /* Adjust padding */
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    max-width: 200px;  /* Set a max-width for better alignment */
+    margin: 10px 0;  /* Add some margin for spacing */
+    font-size: 14px;  /* Adjust font size */
+}
+
+/* Filter Section Styling */
+.filter-form {
+    /* background-color: #f8f9fa; Light background */
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.filter-container input, .filter-container select, .filter-container button {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+/* Hover effect for the filter button */
+.filter-container button:hover {
+    background-color: #43cea2;
+    color: white;
+    border-color: #36b89c;
+}
+
+/* Customizing form elements */
+.filter-container input:focus, .filter-container select:focus {
+    border-color: #43cea2; /* Green focus color */
+    outline: none;
+}
+
+/* Styling for the Upcoming and Past Events labels */
+.filter-container label {
+    font-size: 18px; /* Increase font size */
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Adjust the checkbox itself */
+.filter-container input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.mini-countdown {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  margin: 5px 0;
+}

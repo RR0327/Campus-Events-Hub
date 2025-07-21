@@ -1,6 +1,6 @@
 // countdown.js
 
-const eventDate = new Date("2025-06-11T10:00:00").getTime();
+const eventDate = new Date("2025-06-30T10:00:00").getTime();
 
 const countdown = setInterval(() => {
   const now = new Date().getTime();

@@ -39,6 +39,11 @@ header nav a:hover {
   background-color: #f5efef;
   border-radius: 5px;
 }
+header nav a:hover,
+header nav a.active {
+    background: #667eea;
+    color: white;
+}
 
 .dropdown {
   display: inline-block;
@@ -643,3 +648,4 @@ footer.modern-footer {
     gap: 10px;
   }
 }
+

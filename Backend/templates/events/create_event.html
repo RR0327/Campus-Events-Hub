@@ -1,0 +1,290 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Event | Campus Event Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+
+    body {
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    header nav {
+  /*background-color: #418ade;*/
+  padding: 30px;
+  margin: auto;
+}
+/* Fixed Navbar Styling */
+    nav.navbar {
+      background-color: #185a9d;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    nav .navbar-brand, nav .nav-link {
+      color: white !important;
+    }
+
+    nav .nav-link:hover {
+      background-color: #43cea2;
+      color: white !important;
+    }
+
+    nav .navbar-toggler-icon {
+      background-color: white;
+    }
+
+header nav a {
+  color: #040b13;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 8px 12px;
+  font-size:25px;
+
+}
+
+header nav a:hover {
+  background-color: #f5efef;
+  border-radius: 5px;
+}
+header nav a:hover,
+header nav a.active {
+    background: #667eea;
+    color: white;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #444;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #666;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+header {
+  width: 1140px;
+  max-width: 80%;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+header a {
+  color: #eee;
+  margin-right: 40px;
+  font-size: large;
+  box-shadow: #000;
+  border-radius: 30px;
+}
+
+.logout-btn {
+    background-color: #f00; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #c00;
+}
+
+
+header nav a:hover,
+header nav a.active {
+    background: #667eea;
+    color: white;
+}
+
+    .create-event-card {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .create-event-card h3 {
+      margin-bottom: 30px;
+      text-align: center;
+      color: #333;
+    }
+
+    .form-control {
+      border-radius: 10px;
+    }
+
+    .btn-primary {
+      background-color: #43cea2;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .btn-primary:hover {
+      background-color: #36b89c;
+    }
+
+    .text-muted a {
+      text-decoration: none;
+      color: #185a9d;
+    }
+
+    .text-muted a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Campus Event Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'event_list' %}">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="create-event-card">
+    <h3>Create a New Event</h3>
+    <form method="POST" action="{% url 'create_event' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+      <!-- Event Title -->
+      <div class="mb-3">
+        <label for="title" class="form-label">Event Title</label>
+        <input type="text" id="title" name="title" class="form-control" placeholder="Enter event title" required>
+      </div>
+
+      <!-- Event Description -->
+      <div class="mb-3">
+        <label for="description" class="form-label">Event Description</label>
+        <textarea id="description" name="description" class="form-control" placeholder="Describe the event" rows="4" required></textarea>
+      </div>
+
+      <!-- Event Date -->
+      <div class="mb-3">
+        <label for="date" class="form-label">Event Date</label>
+        <input type="datetime-local" id="date" name="date" class="form-control" required>
+      </div>
+
+      <!-- Event Location -->
+      <div class="mb-3">
+        <label for="location" class="form-label">Event Location</label>
+        <input type="text" id="location" name="location" class="form-control" placeholder="Enter event location" required>
+      </div>
+
+      <!-- Event Image -->
+      <div class="mb-3">
+        <label for="image" class="form-label">Event Image</label>
+        <input type="file" id="image" name="image" class="form-control" required>
+      </div>
+
+      <!-- Event Capacity -->
+      <div class="mb-3">
+        <label for="capacity" class="form-label">Event Capacity</label>
+        <input type="number" id="capacity" name="capacity" class="form-control" placeholder="Enter event capacity" required>
+      </div>
+
+      <!-- Event Category -->
+      <div class="mb-3">
+        <label for="category" class="form-label">Event Category</label>
+        <select id="category" name="category" class="form-control" required>
+          <option value="tech">Tech</option>
+          <option value="culture">Culture</option>
+          <option value="sports">Sports</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Create Event</button>
+    </form>
+  </div>
+
+  <footer class="modern-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="{% static 'Image/logoreal.png' %}" alt="Logo" class="logo">
+        <p>Simply #1 Real Estate Theme</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">List Layout</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>3015 Grand Ave, Coconut Grove, FL 12345</p>
+        <p>+123-456-789</p>
+        <p>sales@example.com</p>
+      </div>
+      <div class="links">
+        <h4>connection</h4>
+        <ul>
+          <li>facebook</li>
+          <li>instagram</li>
+          <li>twitter</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025. All rights reserved.</p>
+      <p>Designed by YourTeamName</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Uncomment and use your CSS if needed -->
+  <!-- <link rel="stylesheet" href="{% static 'eeeday.css' %}"> -->
+  <title>BAIUST EEE Day</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <!-- Navbar container -->
+    {% include 'navbar.html' %}
+    <!-- Navbar end -->
+
+    <!-- Hero Section -->
+    <div class="hero my-4 p-4 bg-dark text-white text-center">
+      <h1>BAIUST CSE FEST <span>2025</span></h1>
+      <h2>By BAIUST Computer Club (BCC)</h2>
+    </div>
+  </header>
+
+  <style>
+    nav a {
+      text-decoration: none;
+      color: #6b5a34;
+      font-weight: 500;
+      font-size: 1.7rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 20px rgba(255, 205, 56, 0.5);
+      background-color: #333;
+    }
+
+    .hero {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #f1eaea;
+      color: #1a1717;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* Hover effect for the hero div */
+    .hero:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 4px 12px rgba(12, 10, 1, 0.5);
+      background-color: #d5cb3e;
+      color: #2855b7;
+    }
+
+    /* Style for h2 with class highlight-text */
+    .highlight-text {
+      font-weight: bold;
+      color: #007bff;
+      display: inline-block;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .highlight-text:hover {
+      color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* Style for all h2 elements */
+    h2 {
+      transition: all 0.3s ease;
+    }
+
+    h2:hover {
+      color: #3a58e2;
+      cursor: pointer;
+      transform: translateY(-2px);
+    }
+
+    h4 {
+      transition: all 0.3s ease;
+    }
+
+    h4:hover {
+      color: #3a58e2;
+      cursor: pointer;
+      transform: translateY(-2px);
+    }
+
+    /* Square style with rounded corners */
+    .square-img {
+      border-radius: 8px;
+      object-fit: cover;
+      border: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    /* Hover effect for both shapes */
+    .hover-effect:hover {
+      transform: scale(1.02);
+      box-shadow: 0 2px 8px rgb(75, 33, 182);
+    }
+  </style>
+
+  <header>
+    <div class="hero text-center py-4 bg-light">
+      <h1 class="display-4 text-uppercase"><span><strong>Segments</strong></span></h1>
+    </div>
+  </header>
+
+  <!-- Coding Competition Segment -->
+
+  <section class="hackathon py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Image -->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img src="{% static 'Images/cp.jpeg' %}" alt="Competitive Programming" class="img-fluid rounded shadow-sm">
+        </div>
+        <!-- Text -->
+        <div class="col-md-6">
+          <h2 class="mb-3"><span class="highlight-text">Welcome to the Coding Competition Segment of the CSE
+              Fest!</span></h2>
+          <p>
+            Greetings, programmers and tech enthusiasts!<br>
+            Join us for an exciting challenge that tests your problem-solving skills and analytical thinking.
+          </p>
+          <p>
+            <strong>Why Participate?</strong><br>
+            Enhance your algorithms, strengthen your coding skills, and prepare for your future career through engaging
+            contests.
+          </p>
+          <!-- <a href="{% url 'signup' %}" class="btn btn-primary mt-3">Register Now</a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- eFootball Segment -->
+
+  <section class="about-me py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Image -->
+        <div class="col-md-6 order-md-2 mb-4 mb-md-0">
+          <img src="{% static 'Images/cse1.jpg' %}" alt="eFootball" class="img-fluid rounded shadow-sm">
+        </div>
+        <!-- Content -->
+        <div class="col-md-6 order-md-1">
+          <h2 class="mb-3"><span class="highlight-text">🎮 Welcome to the eFootball Segment - BAIUST CSE FEST
+              2025</span></h2>
+          <p>
+            Celebrating gaming excellence! The eFootball segment was a hub of passion, skill, and sportsmanship. From
+            intense matches to memorable moments, this event brought players and spectators together.
+          </p>
+          <p>
+            Thanks to everyone who participated and supported. We look forward to bigger and better competitions!
+          </p>
+          {% comment %} <a href="#" class="btn btn-primary mt-3">Learn More</a> {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section: Judges -->
+  <section class="team py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center mb-4"><strong>Meet Our Honourable Judges</strong></h2>
+      <div class="row justify-content-center gy-4">
+
+        <!-- Judge 1 -->
+        <div class="col-md-4 text-center">
+          <img src="{% static 'Images/nargismam.png' %}" alt="Dr. Nargis Parvin"
+            class="img-fluid square-img hover-effect mb-3" style="max-width:150px;">
+          <h4>Dr. Nargis Parvin</h4>
+          <p class="mb-1">Associate Professor</p>
+          <p class="mb-1">Judge & Program Coordinator</p>
+        </div>
+
+        <!-- Judge 2 -->
+        <div class="col-md-4 text-center">
+          <img src="{% static 'Images/muktimam.png' %}" alt="Mousumi Hasan Mukti"
+            class="img-fluid square-img hover-effect mb-3" style="max-width:150px;">
+          <h4>Mousumi Hasan Mukti</h4>
+          <p class="mb-1">Associate Professor</p>
+          <p class="mb-1">Judge</p>
+        </div>
+
+        <!-- Judge 3 -->
+        <div class="col-md-4 text-center">
+          <img src="{% static 'Images/zohramam.png' %}" alt="Most. Fatematuz Zohora"
+            class="img-fluid square-img hover-effect mb-3" style="max-width:150px;">
+          <h4>Most. Fatematuz Zohora</h4>
+          <p class="mb-1">Lecturer</p>
+          <p class="mb-1">Judge & Program Coordinator</p>
+        </div>
+
+        <!-- Judge 4 -->
+        <div class="col-md-4 text-center">
+          <!-- Square shape image -->
+          <img src="{% static 'Images/joysir.png' %}" alt="Mofrad Jamil Joy"
+            class="img-fluid square-img hover-effect mb-3" style="max-width:150px;">
+          <h4>Mofrad Jamil Joy</h4>
+          <p class="mb-1">Lecturer</p>
+          <p class="mb-1">Judge</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  {% include 'footer.html' %}
+
+  <!-- Bootstrap JS Bundle (at the end of body for better performance) -->
+  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+</body>
+
+</html>

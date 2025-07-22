@@ -1,0 +1,332 @@
+/* Reset & Base styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Header styles - kept if used elsewhere, otherwise remove if inline */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+}
+
+/* Logo styling, if used */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #32270f;
+  font-weight: 500;
+  font-size: 1.7rem;
+  /* Additional styles if needed */
+}
+
+nav a:hover {
+  color: #f8c400;
+  transition: color 0.3s ease;
+}
+
+/* Dropdown menu styles */
+.nav {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Dropdown list item */
+.nav li {
+  position: relative;
+}
+
+/* Dropdown links */
+.nav a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: #222;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu a {
+  font-size: 16px;
+  padding: 8px 16px;
+  display: block;
+  color: #4f779f;
+}
+
+.dropdown-menu {
+  font-family: Arial, sans-serif;
+}
+
+/* Dropdown fix: show menu on hover */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Sign-in button styling */
+.sign-in-btn {
+  background-color: #f8c400;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hero section (the background image layout) - kept if you need to style the container */
+.hero-section {
+  position: relative;
+  background-image: url('Image/event12.png');
+  /* keep your background image as needed */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
+  height: 100vh;
+  width: 100%;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+/* Overlay shadow for hero section */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+
+/* Text content styles inside hero */
+.text-content {
+  flex: 1;
+  align-items: center;
+  height: 500px;
+  max-width: 900px;
+  padding: 0 5rem 0 3rem;
+  font-family: 'Times New Roman', Times, serif;
+  margin-left: 4rem;
+}
+
+.text-content h1 {
+  font-size: 4rem;
+  color: #5f0f67;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.text-content h2 {
+  font-size: 2.5rem;
+  color: #070507;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.text-content p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.text-content button {
+  background-color: #111;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.text-content button:hover {
+  background-color: #333;
+}
+
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 1rem;
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.image-content img:hover {
+  transform: scale(1.03);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* achievement section styling */
+.headline1 {
+  font-size: 2.5rem;
+  color: #090808;
+  margin: 40px 0 20px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.achievement-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.certificate {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.certificate:hover {
+  transform: scale(1.03);
+}
+
+.certificate img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 15px 0 5px;
+  color: #444;
+}
+
+.custom-btn {
+  background-color: #007bff;
+  /* Bootstrap Primary Blue */
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+}
+
+.explore-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s;
+}
+
+.explore-btn:hover {
+  background: #0056b3;
+}
+
+.info {
+  display: none;
+  padding: 15px;
+  font-size: 0.95rem;
+  color: #333;
+  border-top: 1px solid #ddd;
+}
+
+.info.show {
+  display: block;
+}

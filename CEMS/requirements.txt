@@ -1,0 +1,8 @@
+Django==5.2.1
+django-extensions==4.1
+pillow==11.2.1
+python-decouple==3.8
+qrcode==8.2
+reportlab==4.4.2
+colorama==0.4.6
+charset-normalizer==3.4.2

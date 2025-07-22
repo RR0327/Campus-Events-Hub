@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAIUST Business Club</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .header-section {
+            padding: 80px 20px;
+            background-color: #007bff;
+            /* A vibrant blue for a business theme */
+            color: white;
+            text-align: center;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .header-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .img-section {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .img-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            padding: 20px;
+            background-color: #343a40;
+            /* Dark shade for footer */
+            color: white;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #ffd700;
+            /* Gold color for link */
+            text-decoration: underline;
+        }
+
+        @media(max-width: 768px) {
+            .header-section h1 {
+                font-size: 2rem;
+            }
+
+            .header-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        {% include 'navbar.html' %}
+    </header>
+
+    <!-- Header / Banner -->
+    <div class="header-section">
+        <h1>Welcome to BAIUST Business Club</h1>
+        <p>
+            BAIUST's Business Club offers students hands-on experience in entrepreneurship, leadership, and business
+            management. Its structure, comprising an Advisor, Co-Advisor, and Cooperation Members, fosters students'
+            creative and organizational skills through targeted goals and activities.
+        </p>
+        <p>
+            We offer Business Week, competitions, idea contests, case studies, and more. Join us to develop your skills
+            and gain valuable leadership and entrepreneurial experience for your resume.
+        </p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-section">
+        <h2>About BAIUST Business Club</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="img-section">
+                    <!-- Replace with your static image path -->
+                    <img src="{% static 'images/business_club_logo.jpg' %}" alt="Business Club Logo" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="description">
+                    Established in 2020, BAIUST Business Club fosters entrepreneurial skills and leadership among
+                    students. It organizes numerous activities such as Business Week, competitions, and seminars to
+                    prepare students for real-world business challenges. The club's hierarchical structure includes
+                    Advisors, Co-Advisors, and various functional cells focusing on incubator projects, professional
+                    development, cultural events, content documentation, and event participation.
+                </p>
+                <p class="description">
+                    The main aim of the club is to nurture creative thinking, organizational skills, and leadership
+                    qualities in students to prepare them for successful careers in the business world.
+                </p>
+            </div>
+        </div>
+
+        <!-- Further details link -->
+        <div class="text-center mt-4">
+            <a href="https://baiust.ac.bd/business-club/" target="_blank" class="btn btn-primary btn-lg">
+                Visit Further Details
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; {{ now.year }} BAIUST Business Club. All rights reserved.
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

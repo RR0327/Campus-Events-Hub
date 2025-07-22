@@ -1,0 +1,155 @@
+<!-- Navbar with consistent styling and structure -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand hover-effect" href="{% url 'Home' %}">
+            Campus Event Hub
+        </a>
+        <!-- Toggler for mobile view -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Always Visible Links -->
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'Home' %}active{% endif %}" 
+                       href="{% url 'Home' %}" 
+                       {% if request.resolver_match.url_name == 'Home' %}aria-current="page"{% endif %}>
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" 
+                       href="{% url 'about' %}" 
+                       {% if request.resolver_match.url_name == 'about' %}aria-current="page"{% endif %}>
+                        About Us
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'event_list' %}active{% endif %}" 
+                       href="{% url 'event_list' %}" 
+                       {% if request.resolver_match.url_name == 'event_list' %}aria-current="page"{% endif %}>
+                        Events
+                    </a>
+                </li>
+
+                <!-- Clubs dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="clubsDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Clubs
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="clubsDropdown">
+                        <li><a class="dropdown-item" href="{% url 'cse_club' %}">BAIUST Computer Club</a></li>
+                        <li><a class="dropdown-item" href="{% url 'eee' %}">BAIUST EEE Club</a></li>
+                        <li><a class="dropdown-item" href="{% url 'law' %}">BAIUST Law Club</a></li>
+                        <li><a class="dropdown-item" href="{% url 'business' %}">BAIUST Business Club</a></li>
+                    </ul>
+                </li>
+
+                <!-- Conditional links based on authentication and role -->
+                {% if user.is_authenticated %}
+                    {% if user.role == 'admin' or user.role == 'club_admin' %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'admin_dashboard' %}active{% endif %}" 
+                               href="{% url 'admin_dashboard' %}" 
+                               {% if request.resolver_match.url_name == 'admin_dashboard' %}aria-current="page"{% endif %}>
+                                Admin Dashboard
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}" 
+                               href="{% url 'dashboard' %}" 
+                               {% if request.resolver_match.url_name == 'dashboard' %}aria-current="page"{% endif %}>
+                                Dashboard
+                            </a>
+                        </li>
+                    {% endif %}
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
+                            Logout
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'login' %}active{% endif %}" 
+                           href="{% url 'login' %}" 
+                           {% if request.resolver_match.url_name == 'login' %}aria-current="page"{% endif %}>
+                            Login
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'signup' %}active{% endif %}" 
+                           href="{% url 'signup' %}" 
+                           {% if request.resolver_match.url_name == 'signup' %}aria-current="page"{% endif %}>
+                            Signup
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hidden logout form -->
+{% if user.is_authenticated %}
+<form id="logoutForm" action="{% url 'logout' %}" method="POST" style="display: none;">
+    {% csrf_token %}
+</form>
+{% endif %}
+
+<!-- Scoped CSS for consistent styling -->
+<style>
+    .custom-navbar .nav-link {
+        font-size: 1.7rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 8px 12px;
+        border-radius: 4px;
+    }
+
+    /* Hover effect for nav links */
+    .custom-navbar .nav-link:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 0 20px rgba(255, 205, 56, 0.5);
+        background-color: #333;
+        color: #f3efec;
+    }
+
+    /* Optional: Style for dropdown toggles for consistency */
+    .custom-navbar .dropdown-toggle {
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: #cfcf2b;
+    }
+
+    /* Style for dropdown menu items */
+    .custom-navbar .dropdown-menu {
+        background-color: #222;
+    }
+
+    /* Style for dropdown items */
+    .custom-navbar .dropdown-item {
+        color: #fff;
+        transition: background-color 0.2s;
+    }
+
+    .custom-navbar .dropdown-item:hover {
+        background-color: #c2ac40;
+    }
+
+    /* In your stylesheet */
+    .hover-effect:hover {
+        color: #cdbb31;
+        text-decoration: underline;
+    }
+</style>

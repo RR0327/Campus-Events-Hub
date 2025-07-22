@@ -60,6 +60,7 @@ _pycache_/
 
 # Distribution / packaging
 .Python
+venv/
 env/
 build/
 develop-eggs/
@@ -119,3 +120,16 @@ db.sqlite3
 #qr_code
 qr_codes/
 /qr_codes/
+
+
+# Ignore all .docx and .pdf files
+*.docx
+*.pdf
+
+# Ignore the captchas output folder
+captchas/
+
+# Ignore all audio files
+*.mp3
+*.wav
+

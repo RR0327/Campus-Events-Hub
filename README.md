@@ -8,7 +8,7 @@ Campus Event Management System (CEMS) is a modern, full-stack **University Event
 It empowers students to register for events and enables club admins to create, manage, and monitor events —  all in a beautifully designed, mobile-responsive platform.
 
 🚀 Built with:  
-- **Frontend**: HTML, CSS, TailwindCSS, JavaScript  
+- **Frontend**: HTML, CSS, Bootstrap, JavaScript  
 - **Backend**: Django (Python)  
 - **Database**: sqlite3   
 
@@ -36,7 +36,7 @@ Events are sorted into upcoming and past categories for easy access.
 
 - *Smart Notifications & Extras*:
 
-• *Registration Confirmation Emails*: Sends emails to confirm successful sign-ups.
+• *Registration Confirmation Emails*: Confirms successful sign-ups by sending emails and OTPs.
 
 • *Countdown Timers for Anticipation*: Real-time countdowns to the event start date.
 
@@ -55,12 +55,12 @@ Events are sorted into upcoming and past categories for easy access.
 ## 🛠️ Tech Stack
 
 ```
-| Frontend | Backend | Database |
-|:--------:|:-------:|:--------:|
-| HTML     | Django  | sqlite3  |
-| CSS      | Django ORM |       |
-| TailwindCSS |      |          |
-| JavaScript |       |          |
+| Frontend   | Backend    | Database |
+|:---------: |:--------:  |:--------:|
+| HTML       | Django     | sqlite3  |
+| CSS        | Django ORM |          |
+| Bootstrap  |            |          |
+| JavaScript |            |          |
 ```
 ---
 
@@ -69,7 +69,7 @@ Events are sorted into upcoming and past categories for easy access.
 ```
 Campus Event Management System (CEMS)/
 ├── backend/             # Django Backend (Django + sqlite3)
-├── frontend/            # Frontend (HTML, CSS, TailwindCSS, JavaScript)
+├── frontend/            # Frontend (HTML, CSS, Bootstrap, JavaScript)
 ├── README.md            # Project Documentation
 ```
 
@@ -87,19 +87,21 @@ Campus Event Management System (CEMS)/
 
 - Profile Page (Registered / Created Events)
 
----
-
-📈 Future Enhancements
-
 - Event Categories Expansion
 
 - Admin Dashboard Analytics
 
+- Payment Method (On-going)
+
+- Reminder, Google Calendar Event Sync (On-going)
+
+- AI Assistant (On-going)
+
+---
+
+📈 Future Enhancements
+
 - Real-time Notifications
-
-- Google Calendar Event Sync
-
-- API-based React SPA (Single Page Application) Version
 
 ---
 

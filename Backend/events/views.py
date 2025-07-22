@@ -364,4 +364,51 @@ def businessclub(request):
     return render(request, 'business.html')
 
 
+@login_required
+def admin_dashboard_view(request):
+    if not (request.user.role == 'admin' or request.user.role == 'club_admin'):
+        messages.error(request, "You don't have permission to access this page.")
+        return redirect('dashboard')
+    
+    # Get all events
+    all_events = Event.objects.all().order_by('date')
+    
+    # Get statistics
+    total_events = Event.objects.count()
+    upcoming_events = Event.objects.filter(date__gte=timezone.now()).count()
+    total_registrations = Registration.objects.count()
+    
+    # Get events happening today
+    today = timezone.now().date()
+    active_events = Event.objects.filter(
+        date__date=today
+    ).count()
+    
+    # Get recent registrations
+    recent_registrations = Registration.objects.select_related('event', 'student').order_by('-timestamp')[:10]
+    
+    # Get all registrations for the registrations tab
+    all_registrations = Registration.objects.select_related('event', 'student').order_by('-timestamp')
+    
+    return render(request, 'admin_dashboard.html', {
+        'user': request.user,
+        'all_events': all_events,
+        'total_events': total_events,
+        'upcoming_events': upcoming_events,
+        'total_registrations': total_registrations,
+        'active_events': active_events,
+        'recent_registrations': recent_registrations,
+        'all_registrations': all_registrations,
+    })
 
+
+@login_required
+def delete_event(request, event_id):
+    if not (request.user.role == 'admin' or request.user.role == 'club_admin'):
+        messages.error(request, "You don't have permission to perform this action.")
+        return redirect('dashboard')
+    
+    event = get_object_or_404(Event, id=event_id)
+    event.delete()
+    messages.success(request, "Event deleted successfully.")
+    return redirect('admin_dashboard')

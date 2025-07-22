@@ -36,6 +36,8 @@ urlpatterns = [
     path('eee/club', views.eeeclub, name='eee'),
     path('law/club', views.lawclub, name='law'),
     path('business/club', views.businessclub, name='business'),
+    path('admin-dashboard/', views.admin_dashboard_view, name='admin_dashboard'),
+    path('delete-event/<int:event_id>/', views.delete_event, name='delete_event'),
     
     
 ]

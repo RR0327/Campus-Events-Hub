@@ -12,209 +12,138 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
     <style>
+        /* Navigation links styling */
         nav a {
-          text-decoration: none;
-          color: #6b5a34;
-          font-weight: 500;
-          font-size: 1.7rem;
-          transition: color 0.3s ease;
+            text-decoration: none;
+            color: #6b5a34;
+            font-weight: 500;
+            font-size: 1.7rem;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 0 20px rgba(255, 205, 56, 0.5);
-          background-color: #333;
+            /* Slight lift and enlarge effect with a subtle shadow */
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 0 20px rgba(255, 205, 56, 0.5);
+            background-color: #333;
+            /* Dark background on hover */
+            color: #fff;
+            /* Optional, to ensure visibility */
         }
 
-        .hero {
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-          background-color: #f1eaea;
-          color: #1a1717;
-          transition: all 0.3s ease;
-          cursor: pointer;
-          padding: 20px;
-          border-radius: 8px;
-        }
-
-        /* Hover effect for the hero div */
-        .hero:hover {
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 4px 12px rgba(12, 10, 1, 0.5);
-          background-color: #f0ebeb;
-          color: #171616;
-        }
-
-        /* About section card style (matching your style) */
-        .about-card {
-          background-color: #2c2c2c;
-          color: #fff;
-          padding: 30px;
-          border-radius: 15px;
-          box-shadow: 0 4px 12px rgba(255, 205, 56, 0.4);
-          max-width: 900px;
-          margin: 40px auto;
-          transition: all 0.3s ease;
-          cursor: pointer;
-        }
-
-        /* Hover effect for the 'about' card */
-        .about-card:hover {
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 0 20px rgba(15, 11, 0, 0.855);
-          background-color: #222;
-          /* slightly lighter on hover */
-        }
-
-        /* Optional hover effects for the heading */
-        h1.campus-heading {
-          font-size: calc(1.5rem + 2vw);
-          display: inline-block;
-          cursor: pointer;
-          text-align: center;
-          transition: color 0.3s, transform 0.3s;
-        }
-
-        h1.campus-heading:hover {
-          color: #6f42c1;
-          transform: scale(1.02);
-        }
-
-        /* For the tagline <h2> */
-        .tagline-hover {
-          transition: color 0.3s, transform 0.3s;
-        }
-
-        .tagline-hover:hover {
-          color: #6f42c1;
-          /* change to desired hover color */
-          transform: scale(1.05);
-          /* slightly enlarge on hover */
-        }
-
-        /* For the button */
-        .btn-hover {
-          transition: box-shadow 0.3s, transform 0.3s;
-        }
-
-        .btn-hover:hover {
-          box-shadow: 0 4px 12px rgba(15, 146, 182, 0.963);
-          transform: translateY(-2px);
-          /* lift button slightly */
-        }
-        
         /* Admin specific styles */
         .admin-stats-card {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 1.5rem;
-            border-radius: 16px;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         .admin-stats-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
-        
-        .admin-stats-card p {
-            font-size: 1rem;
-            opacity: 0.9;
+
+        .admin-stats-card .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
         }
-        
-        .admin-controls {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
+
+        .admin-actions {
+            margin-bottom: 30px;
         }
-        
-        .admin-btn {
-            background: linear-gradient(135deg, #43cea2, #185a9d);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .admin-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-        
-        .event-countdown {
+
+        .countdown-timer {
             font-size: 1.2rem;
             font-weight: bold;
-            color: #333;
-            background: #f8f9ff;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
+            color: #dc3545;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
             display: inline-block;
-            margin-top: 0.5rem;
+            margin-bottom: 15px;
         }
-        
-        .registrations-list {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 1rem;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 1rem;
+
+        .registrations-table {
+            width: 100%;
+            margin-top: 20px;
         }
-        
-        .registration-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.75rem;
-            border-bottom: 1px solid #e5e5e5;
+
+        .registrations-table th {
+            background-color: #f8f9fa;
         }
-        
-        .registration-item:last-child {
-            border-bottom: none;
+
+        /* Event management buttons */
+        .event-management-btns .btn {
+            margin-right: 5px;
+            margin-bottom: 5px;
         }
-        
-        .registration-item .student-info {
-            font-weight: 500;
-        }
-        
-        .registration-item .registration-date {
-            color: #666;
-            font-size: 0.9rem;
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .admin-stats-card {
+                margin-bottom: 15px;
+            }
         }
     </style>
-    {% include 'navbar.html' %}
+</head>
 
-    <div class="dashboard-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="profile-section">
-                
-                <!-- User Information -->
-                <h3>{{ user.full_name }}</h3>
+<body>
+    <header> {% include 'navbar.html' %}
+    </header>
+
+    <div class="d-flex">
+        <!-- Static Sidebar for large screens -->
+        <div class="d-none d-md-block bg-light" style="width: 250px; height: 100vh; padding: 20px; overflow-y:auto;">
+            <!-- Profile info -->
+            <div class="text-center mb-4">
+                <h3 class="mt-2">{{ user.full_name }}</h3>
                 <p>ID: {{ user.studentid }}</p>
                 <p>{{ user.department }} Department</p>
-                <p class="text-success">ADMIN</p>
+                <p class="badge bg-danger">Administrator</p>
             </div>
-
-            <nav class="sidebar-nav">
-                <a href="#overview" class="nav-item" data-tab="overview">
-                    <span class="icon">📊</span> Overview
-                </a>
-                <a href="#events" class="nav-item" data-tab="events">
-                    <span class="icon">🎪</span> All Events
-                </a>
-                <a href="#registrations" class="nav-item" data-tab="registrations">
-                    <span class="icon">📝</span> Registrations
-                </a>
-                <a href="#create-event" class="nav-item" data-tab="create-event">
-                    <span class="icon">➕</span> Create Event
-                </a>
-                <a href="#settings" class="nav-item" data-tab="settings">
-                    <span class="icon">⚙️</span> Settings
-                </a>
+            <!-- Navigation Items -->
+            <nav class="nav flex-column">
+                <a href="#overview" class="nav-item" data-tab="overview">Overview</a>
+                <a href="#events" class="nav-item" data-tab="events">Events</a>
+                <a href="#registrations" class="nav-item" data-tab="registrations">Registrations</a>
+                <a href="#create-event" class="nav-item" data-tab="create-event">Create Event</a>
+                <a href="#settings" class="nav-item" data-tab="settings">Settings</a>
             </nav>
-        </aside>
+        </div>
+
+        <!-- Toggle button for small screens -->
+        <button class="btn btn-primary d-md-none m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+            aria-controls="sidebar" aria-expanded="false">
+            Menu
+        </button>
+
+        <!-- Offcanvas sidebar for small screens -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="sidebarLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <!-- Profile info -->
+                <div class="text-center mb-4">
+                    <h3 class="mt-2">{{ user.full_name }}</h3>
+                    <p>ID: {{ user.studentid }}</p>
+                    <p>{{ user.department }} Department</p>
+                    <p class="badge bg-danger">Administrator</p>
+                </div>
+                <!-- Navigation items -->
+                <nav class="nav flex-column">
+                    <a href="#overview" class="nav-item" data-tab="overview" data-bs-dismiss="offcanvas">Overview</a>
+                    <a href="#events" class="nav-item" data-tab="events" data-bs-dismiss="offcanvas">Events</a>
+                    <a href="#registrations" class="nav-item" data-tab="registrations" data-bs-dismiss="offcanvas">Registrations</a>
+                    <a href="#create-event" class="nav-item" data-tab="create-event" data-bs-dismiss="offcanvas">Create Event</a>
+                    <a href="#settings" class="nav-item" data-tab="settings" data-bs-dismiss="offcanvas">Settings</a>
+                </nav>
+            </div>
+        </div>
 
         <!-- Main Content -->
         <main class="main-content">
@@ -222,36 +151,37 @@
             <div id="overview" class="tab-content active">
                 <div class="welcome-section">
                     <h1>Welcome back, <span id="welcomeName">{{ user.full_name }}</span>!</h1>
-                    <p>Admin Dashboard - Manage all campus events and activities</p>
+                    <p>Administrator Dashboard - Manage all campus events</p>
                 </div>
 
-                <div class="stats-grid">
-                    <div class="admin-stats-card">
-                        <div class="stat-icon">🎪</div>
-                        <div class="stat-info">
-                            <h3>{{ total_events }}</h3>
-                            <p>Total Events</p>
+                <!-- Admin Stats Grid -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="admin-stats-card">
+                            <h3>Total Events</h3>
+                            <div class="stat-value">{{ total_events }}</div>
+                            <p>All campus events</p>
                         </div>
                     </div>
-                    <div class="admin-stats-card">
-                        <div class="stat-icon">👥</div>
-                        <div class="stat-info">
-                            <h3>{{ total_registrations }}</h3>
-                            <p>Total Registrations</p>
+                    <div class="col-md-3">
+                        <div class="admin-stats-card">
+                            <h3>Upcoming</h3>
+                            <div class="stat-value">{{ upcoming_events }}</div>
+                            <p>Events coming soon</p>
                         </div>
                     </div>
-                    <div class="admin-stats-card">
-                        <div class="stat-icon">📅</div>
-                        <div class="stat-info">
-                            <h3>{{ upcoming_events }}</h3>
-                            <p>Upcoming Events</p>
+                    <div class="col-md-3">
+                        <div class="admin-stats-card">
+                            <h3>Registrations</h3>
+                            <div class="stat-value">{{ total_registrations }}</div>
+                            <p>Total signups</p>
                         </div>
                     </div>
-                    <div class="admin-stats-card">
-                        <div class="stat-icon">✅</div>
-                        <div class="stat-info">
-                            <h3>{{ approved_events }}</h3>
-                            <p>Approved Events</p>
+                    <div class="col-md-3">
+                        <div class="admin-stats-card">
+                            <h3>Active Now</h3>
+                            <div class="stat-value">{{ active_events }}</div>
+                            <p>Events happening today</p>
                         </div>
                     </div>
                 </div>
@@ -261,7 +191,7 @@
                     <div class="activity-list">
                         {% for reg in recent_registrations %}
                         <div class="activity-item">
-                            <div class="activity-icon">📝</div>
+                            <div class="activity-icon">🎪</div>
                             <div class="activity-details">
                                 <h4>{{ reg.student.full_name }} registered for {{ reg.event.title }}</h4>
                                 <p>{{ reg.timestamp|date:"F j, Y H:i" }}</p>
@@ -280,41 +210,53 @@
 
             <!-- Events Tab -->
             <div id="events" class="tab-content">
-                <div class="admin-controls">
-                    <button class="admin-btn" onclick="window.location.href='{% url 'create_event' %}'">
-                        <i class="fas fa-plus"></i> Create New Event
-                    </button>
-                    <button class="admin-btn" onclick="filterEvents('upcoming')">
-                        <i class="fas fa-calendar-alt"></i> Upcoming
-                    </button>
-                    <button class="admin-btn" onclick="filterEvents('past')">
-                        <i class="fas fa-history"></i> Past
-                    </button>
-                    <button class="admin-btn" onclick="filterEvents('all')">
-                        <i class="fas fa-list"></i> All Events
-                    </button>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1>All Events</h1>
+                    <div class="admin-actions">
+                        <a href="{% url 'create_event' %}" class="btn btn-success">
+                            <i class="fas fa-plus"></i> Create Event
+                        </a>
+                    </div>
                 </div>
-
-                <h1>All Events</h1>
+                
                 <div class="events-grid">
                     {% for event in all_events %}
-                    <div class="event-card" data-status="{% if event.is_upcoming %}upcoming{% else %}past{% endif %}">
+                    <div class="event-card">
                         <img src="{{ event.image.url }}" alt="{{ event.title }}">
                         <div class="event-info">
+                            <div class="event-status {% if event.is_open %}open{% else %}closed{% endif %}">
+                                {% if event.is_open %}
+                                    Registration Open ({{ event.remaining_seats }} seats left)
+                                {% else %}
+                                    Registration Closed
+                                {% endif %}
+                            </div>
                             <h3>{{ event.title }}</h3>
                             <p class="event-date">📅 {{ event.date|date:"F j, Y H:i" }}</p>
                             <p class="event-location">📍 {{ event.location }}</p>
-                            <p>Capacity: {{ event.registrations.count }}/{{ event.capacity }}</p>
-                            {% if event.is_upcoming %}
-                                <div class="event-countdown" id="countdown-{{ event.id }}"></div>
-                                <span class="event-status upcoming">Upcoming</span>
-                            {% else %}
-                                <span class="event-status attended">Past</span>
-                            {% endif %}
-                            <div class="admin-actions">
-                                <button class="admin-btn" onclick="window.location.href='{% url 'event_detail' event.id %}'">
+                            <p class="event-description">{{ event.description|truncatewords:20 }}</p>
+                            
+                            <div class="countdown-timer" data-event-date="{{ event.date|date:'Y-m-d H:i:s' }}">
+                                Event {% if event.is_past %}ended{% else %}in{% endif %}: 
+                                <span class="countdown-value">
+                                    {% if event.is_past %}
+                                        {{ event.date|timesince }} ago
+                                    {% else %}
+                                        {{ event.date|timeuntil }}
+                                    {% endif %}
+                                </span>
+                            </div>
+                            
+                            <div class="event-management-btns mt-2">
+                                <a href="{% url 'event_detail' event.id %}" class="btn btn-primary btn-sm">
                                     <i class="fas fa-eye"></i> View
-                                </button>
+                                </a>
+                                <a href="{% url 'create_event' %}" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                                <a href="#" class="btn btn-danger btn-sm" onclick="confirmDelete({{ event.id }})">
+                                    <i class="fas fa-trash"></i> Delete
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -330,34 +272,52 @@
             <div id="registrations" class="tab-content">
                 <h1>Event Registrations</h1>
                 
-                <div class="admin-controls">
-                    <div class="form-group">
-                        <label for="event-filter">Filter by Event:</label>
-                        <select id="event-filter" class="form-control">
-                            <option value="all">All Events</option>
-                            {% for event in all_events %}
-                            <option value="{{ event.id }}">{{ event.title }}</option>
-                            {% endfor %}
-                        </select>
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>All Registrations</h3>
                     </div>
-                </div>
-                
-                <div class="registrations-list">
-                    {% for registration in all_registrations %}
-                    <div class="registration-item" data-event="{{ registration.event.id }}">
-                        <div class="student-info">
-                            {{ registration.student.full_name }} ({{ registration.student.studentid }})
-                        </div>
-                        <div class="event-info">
-                            {{ registration.event.title }}
-                        </div>
-                        <div class="registration-date">
-                            {{ registration.timestamp|date:"M j, Y H:i" }}
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table registrations-table">
+                                <thead>
+                                    <tr>
+                                        <th>Event</th>
+                                        <th>Student</th>
+                                        <th>Registration Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for reg in all_registrations %}
+                                    <tr>
+                                        <td>{{ reg.event.title }}</td>
+                                        <td>{{ reg.student.full_name }}</td>
+                                        <td>{{ reg.timestamp|date:"M j, Y H:i" }}</td>
+                                        <td>
+                                            {% if reg.event.is_past %}
+                                                <span class="badge bg-secondary">Completed</span>
+                                            {% elif reg.event.is_open %}
+                                                <span class="badge bg-success">Registered</span>
+                                            {% else %}
+                                                <span class="badge bg-warning">Closed</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'event_detail' reg.event.id %}" class="btn btn-sm btn-primary">
+                                                <i class="fas fa-eye"></i> View
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td colspan="5" class="text-center">No registrations found</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    {% empty %}
-                    <p>No registrations found.</p>
-                    {% endfor %}
                 </div>
             </div>
 
@@ -422,7 +382,7 @@
 
             <!-- Settings Tab -->
             <div id="settings" class="tab-content">
-                <h1>Admin Settings</h1>
+                <h1>Settings</h1>
                 <div class="settings-sections">
                     <div class="settings-section">
                         <h3>Profile Information</h3>
@@ -438,35 +398,22 @@
                             </div>
                             <div class="form-group">
                                 <label>Email (Additional)</label>
-                                <input type="email" name="additional_email" value="{{ user.additional_email }}" id="settingsAdditionalEmail">
+                                <input type="email" name="additional_email" value="{{ user.additional_email }}"
+                                    id="settingsAdditionalEmail">
                             </div>
                             <div class="form-group">
-                                <label>Department</label>
+                                <label>Department </label>
                                 <input type="text" value="{{ user.department }}" id="settingsDepartment" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="settingsNumber">Mobile Number</label>
-                                <input type="tel" id="settingsNumber" name="mobile_number" value="{{ user.mobile_number }}" pattern="^0\d{10}$" maxlength="11"
-                                    placeholder="Enter your mobile number" inputmode="numeric" required>
+                                <input type="tel" id="settingsNumber" name="mobile_number" value="{{ user.mobile_number }}"
+                                    pattern="^0\d{10}$" maxlength="11" placeholder="Enter your mobile number"
+                                    inputmode="numeric" required>
                             </div>
 
                             <button type="submit" class="save-btn">Save Changes</button>
                         </form>
-                    </div>
-                    
-                    <div class="settings-section">
-                        <h3>Admin Tools</h3>
-                        <div class="admin-controls">
-                            <button class="admin-btn" onclick="window.location.href='#'">
-                                <i class="fas fa-users"></i> Manage Users
-                            </button>
-                            <button class="admin-btn" onclick="window.location.href='#'">
-                                <i class="fas fa-calendar-check"></i> Approve Events
-                            </button>
-                            <button class="admin-btn" onclick="window.location.href='#'">
-                                <i class="fas fa-chart-bar"></i> View Reports
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -480,58 +427,52 @@
     <script src="{% static 'dashboard.js' %}"></script>
     
     <script>
-        // Countdown timer for events
+        // Delete confirmation
+        function confirmDelete(eventId) {
+            if (confirm('Are you sure you want to delete this event? This action cannot be undone.')) {
+                // Implement delete functionality here
+                window.location.href = `/delete_event/${eventId}/`;
+            }
+        }
+
+        // Countdown timer update
         function updateCountdowns() {
-            const now = new Date().getTime();
+            const countdownElements = document.querySelectorAll('.countdown-timer');
             
-            document.querySelectorAll('.event-card[data-status="upcoming"]').forEach(card => {
-                const eventId = card.id.split('-')[1];
-                const eventDate = new Date("{{ event.date.isoformat }}").getTime();
+            countdownElements.forEach(element => {
+                const eventDateStr = element.getAttribute('data-event-date');
+                const eventDate = new Date(eventDateStr);
+                const now = new Date();
                 
-                const distance = eventDate - now;
-                
-                if (distance < 0) {
-                    document.getElementById(`countdown-${eventId}`).innerHTML = "Event started!";
-                    return;
+                if (eventDate > now) {
+                    // Event is in the future
+                    const diff = eventDate - now;
+                    
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                    
+                    element.querySelector('.countdown-value').textContent = 
+                        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                } else {
+                    // Event is in the past
+                    const diff = now - eventDate;
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    
+                    if (days === 0) {
+                        element.querySelector('.countdown-value').textContent = 'today';
+                    } else {
+                        element.querySelector('.countdown-value').textContent = 
+                            `${days} day${days !== 1 ? 's' : ''} ago`;
+                    }
                 }
-                
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                document.getElementById(`countdown-${eventId}`).innerHTML = 
-                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
             });
         }
-        
+
         // Update countdowns every second
         setInterval(updateCountdowns, 1000);
         updateCountdowns(); // Initial call
-        
-        // Filter events
-        function filterEvents(type) {
-            document.querySelectorAll('.event-card').forEach(card => {
-                card.style.display = 'none';
-                
-                if (type === 'all' || card.getAttribute('data-status') === type) {
-                    card.style.display = 'block';
-                }
-            });
-        }
-        
-        // Filter registrations by event
-        document.getElementById('event-filter').addEventListener('change', function() {
-            const eventId = this.value;
-            
-            document.querySelectorAll('.registration-item').forEach(item => {
-                item.style.display = 'flex';
-                
-                if (eventId !== 'all' && item.getAttribute('data-event') !== eventId) {
-                    item.style.display = 'none';
-                }
-            });
-        });
     </script>
 </body>
 

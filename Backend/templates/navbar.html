@@ -16,64 +16,30 @@
             <ul class="navbar-nav">
                 <!-- Always Visible Links -->
                 <li class="nav-item">
-                    {% if request.resolver_match.url_name == 'Home' %}
-                    <a class="nav-link active" href="{% url 'Home' %}" aria-current="page">Home</a>
-                    {% else %}
-                    <a class="nav-link" href="{% url 'Home' %}">Home</a>
-                    {% endif %}
+                    <a class="nav-link {% if request.resolver_match.url_name == 'Home' %}active{% endif %}" 
+                       href="{% url 'Home' %}" 
+                       {% if request.resolver_match.url_name == 'Home' %}aria-current="page"{% endif %}>
+                        Home
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    {% if request.resolver_match.url_name == 'about' %}
-                    <a class="nav-link active" href="{% url 'about' %}" aria-current="page">About Us</a>
-                    {% else %}
-                    <a class="nav-link" href="{% url 'about' %}">About Us</a>
-                    {% endif %}
-                </li>
-
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                    {% if request.resolver_match.url_name == 'dashboard' %}
-                    <a class="nav-link active" href="{% url 'dashboard' %}" aria-current="page">Dashboard</a>
-                    {% else %}
-                    <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
-                    {% endif %}
+                    <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" 
+                       href="{% url 'about' %}" 
+                       {% if request.resolver_match.url_name == 'about' %}aria-current="page"{% endif %}>
+                        About Us
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    {% if request.resolver_match.url_name == 'event_list' %}
-                    <a class="nav-link active" href="{% url 'event_list' %}" aria-current="page">Events</a>
-                    {% else %}
-                    <a class="nav-link" href="{% url 'event_list' %}">Events</a>
-                    {% endif %}
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    {% if request.resolver_match.url_name == 'login' %}
-                    <a class="nav-link active" href="{% url 'login' %}" aria-current="page">Login</a>
-                    {% else %}
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    {% endif %}
+                    <a class="nav-link {% if request.resolver_match.url_name == 'event_list' %}active{% endif %}" 
+                       href="{% url 'event_list' %}" 
+                       {% if request.resolver_match.url_name == 'event_list' %}aria-current="page"{% endif %}>
+                        Events
+                    </a>
                 </li>
 
-                <li class="nav-item">
-                    {% if request.resolver_match.url_name == 'signup' %}
-                    <a class="nav-link active" href="{% url 'signup' %}" aria-current="page">Signup</a>
-                    {% else %}
-                    <a class="nav-link" href="{% url 'signup' %}">Signup</a>
-                    {% endif %}
-                </li>
-
-                <li class="nav-item">
-                    {% if request.resolver_match.url_name == 'event_list' %}
-                    <a class="nav-link active" href="{% url 'event_list' %}" aria-current="page">Events</a>
-                    {% else %}
-                    <a class="nav-link" href="{% url 'event_list' %}">Events</a>
-                    {% endif %}
-                </li>
-                {% endif %}
-
-                <!-- Clubs dropdown for both logged in and guest users -->
+                <!-- Clubs dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="clubsDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -86,13 +52,48 @@
                         <li><a class="dropdown-item" href="{% url 'business' %}">BAIUST Business Club</a></li>
                     </ul>
                 </li>
-                
+
+                <!-- Conditional links based on authentication and role -->
                 {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
-                        Logout
-                    </a>
-                </li>
+                    {% if user.role == 'admin' or user.role == 'club_admin' %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'admin_dashboard' %}active{% endif %}" 
+                               href="{% url 'admin_dashboard' %}" 
+                               {% if request.resolver_match.url_name == 'admin_dashboard' %}aria-current="page"{% endif %}>
+                                Admin Dashboard
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}" 
+                               href="{% url 'dashboard' %}" 
+                               {% if request.resolver_match.url_name == 'dashboard' %}aria-current="page"{% endif %}>
+                                Dashboard
+                            </a>
+                        </li>
+                    {% endif %}
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
+                            Logout
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'login' %}active{% endif %}" 
+                           href="{% url 'login' %}" 
+                           {% if request.resolver_match.url_name == 'login' %}aria-current="page"{% endif %}>
+                            Login
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'signup' %}active{% endif %}" 
+                           href="{% url 'signup' %}" 
+                           {% if request.resolver_match.url_name == 'signup' %}aria-current="page"{% endif %}>
+                            Signup
+                        </a>
+                    </li>
                 {% endif %}
             </ul>
         </div>

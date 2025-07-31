@@ -68,9 +68,8 @@ Events are sorted into upcoming and past categories for easy access.
 
 ```
 Campus Event Management System (CEMS)/
-├── backend/             # Django Backend (Django + sqlite3)
-├── frontend/            # Frontend (HTML, CSS, Bootstrap, JavaScript)
-├── README.md            # Project Documentation
+├── CEMS/             # Django Backend (Django + sqlite3) and Frontend(HTML, CSS, JS)
+├── README.md         # Project Documentation
 ```
 
 📋 Core Pages
@@ -99,13 +98,13 @@ Campus Event Management System (CEMS)/
 
 ---
 
-📈 Future Enhancements
+# 📈 Future Enhancements
 
 - Real-time Notifications
 
 ---
 
-🤝 Contribution 
+*🤝 Contribution* 
 
 We welcome contributions!
 
@@ -113,21 +112,34 @@ Please open issues and submit pull requests with clear, concise commits.
 
 ---
 
-🧑‍💻 Developed By
+# 🧑‍💻 Developed By
 
 Campus Event Management System (CEMS) Development Team
 
-Md Rakibul Hassan, Md Tahsin Azad Shaikat, Dipa Barua
+**Md Rakibul Hassan**
+
+Web developer specializing in front-end, back-end, and Django, with additional expertise in IoT and robotics.
+🔗 [LinkedIn](https://www.linkedin.com/in/mdtahsinazad020/)
+
+**Md Tahsin Azad Shaikat**
+
+Web developer focused on front-end, back-end, and Django, with supplementary skills in IoT and robotics.
+🔗 [LinkedIn](https://www.linkedin.com/in/mdtahsinazad020/)
+
+**Dipa Barua**
+
+Frontend Developer | UI/UX Designer
+🔗 [LinkedIn](https://www.linkedin.com/in/dipa-barua-387071303/)
 
 ---
 
-📄 License
+**📄 License**
 
 This project is licensed under the MIT License.
 
 ---
 
-🔥 Project Status
+# Project Status
 
 Campus Event Management System (CEMS) is actively under development and growing every day.
 

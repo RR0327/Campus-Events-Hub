@@ -86,7 +86,7 @@ def signup_view(request):
         
         send_mail(
             subject="Welcome to Campus Event Hub!",
-            message=f"Hi {full_name},\n\nWelcome to Campus Event Hub! We are excited to have you on board.\n\nYour OTP for email verification is: {otp}\n(Valid for 5 minutes)",
+            message=f"Hi {full_name},\n\nYour OTP for email verification is: {otp}\n(Valid for 5 minutes)",
             from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=[email],
             fail_silently=False

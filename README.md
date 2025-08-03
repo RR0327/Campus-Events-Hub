@@ -119,7 +119,7 @@ Campus Event Management System (CEMS) Development Team
 **Md Rakibul Hassan**
 
 Web developer specializing in front-end, back-end, and Django, with additional expertise in IoT and robotics.
-🔗 [LinkedIn](https://www.linkedin.com/in/mdtahsinazad020/)
+🔗 [LinkedIn](https://www.linkedin.com/in/md-rakibul-hassan-507b00308)
 
 **Md Tahsin Azad Shaikat**
 

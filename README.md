@@ -2,57 +2,58 @@
   <img src="CEMS.png" width="300" alt="Campus Event Management System Logo">
 </p>
 
-## <h1 align="center"> 🎓 Campus Event Management System (CEMS) </h1>
+## <h1 align="center"> Campus Event Management System (CEMS) </h1>
 
 Campus Event Management System (CEMS) is a modern, full-stack **University Event Management System**.  
-It empowers students to register for events and enables club admins to create, manage, and monitor events —  all in a beautifully designed, mobile-responsive platform.
+It empowers students to register for events and enables club admins to create, manage, and monitor events — all in a beautifully designed, mobile-responsive platform.
 
-🚀 Built with:  
-- **Frontend**: HTML, CSS, Bootstrap, JavaScript  
-- **Backend**: Django (Python)  
-- **Database**: sqlite3   
+Built with:
 
----
-
-## ✨ Key Features
-
-- *Custom Dashboard Navigation*:
-Smart login directs students and club admins to their personalized dashboards.
-
-- *Event Enrollment Made Simple*:
-Students can easily browse and sign up for campus activities of interest.
-
-- *Event Creation Suite for Admins*:
-Club admins can set up new events with comprehensive details like title, description, date, capacity, and visuals.
-
-- *Capacity Management System*:
-Events automatically close registrations when the participant limit is reached.
-
-- *Dynamic Participation Status*:
-Events show live status indicators indicating whether they are "Open" or "Closed."
-
-- *Chronological Event Organization*:
-Events are sorted into upcoming and past categories for easy access.
-
-- *Smart Notifications & Extras*:
-
-• *Registration Confirmation Emails*: Confirms successful sign-ups by sending emails and OTPs.
-
-• *Countdown Timers for Anticipation*: Real-time countdowns to the event start date.
-
-• *Digital Ticketing via QR Codes*: Generates QR codes for event entry.
-
-• *Pre-Event Approval Process*: Requires administrative consent before events are published.
-
-• *User-Friendly Cancellation Option*: Allows students to withdraw from events if necessary.
-
-• *Event Discovery Tools*: Search by event or club names and filter by categories.
-
-• *Responsive Interface Design*: Adaptable layout for optimal viewing on any device.
+- **Frontend**: HTML, CSS, Bootstrap, JavaScript
+- **Backend**: Django (Python)
+- **Database**: sqlite3
 
 ---
 
-## 🛠️ Tech Stack
+## Key Features
+
+- _Custom Dashboard Navigation_:
+  Smart login directs students and club admins to their personalized dashboards.
+
+- _Event Enrollment Made Simple_:
+  Students can easily browse and sign up for campus activities of interest.
+
+- _Event Creation Suite for Admins_:
+  Club admins can set up new events with comprehensive details like title, description, date, capacity, and visuals.
+
+- _Capacity Management System_:
+  Events automatically close registrations when the participant limit is reached.
+
+- _Dynamic Participation Status_:
+  Events show live status indicators indicating whether they are "Open" or "Closed."
+
+- _Chronological Event Organization_:
+  Events are sorted into upcoming and past categories for easy access.
+
+- _Smart Notifications & Extras_:
+
+• _Registration Confirmation Emails_: Confirms successful sign-ups by sending emails and OTPs.
+
+• _Countdown Timers for Anticipation_: Real-time countdowns to the event start date.
+
+• _Digital Ticketing via QR Codes_: Generates QR codes for event entry.
+
+• _Pre-Event Approval Process_: Requires administrative consent before events are published.
+
+• _User-Friendly Cancellation Option_: Allows students to withdraw from events if necessary.
+
+• _Event Discovery Tools_: Search by event or club names and filter by categories.
+
+• _Responsive Interface Design_: Adaptable layout for optimal viewing on any device.
+
+---
+
+## Tech Stack
 
 ```
 | Frontend   | Backend    | Database |
@@ -62,9 +63,10 @@ Events are sorted into upcoming and past categories for easy access.
 | Bootstrap  |            |          |
 | JavaScript |            |          |
 ```
+
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 Campus Event Management System (CEMS)/
@@ -72,7 +74,7 @@ Campus Event Management System (CEMS)/
 ├── README.md         # Project Documentation
 ```
 
-📋 Core Pages
+# Core Pages
 
 - Login Page
 
@@ -98,13 +100,13 @@ Campus Event Management System (CEMS)/
 
 ---
 
-# 📈 Future Enhancements
+# Future Enhancements
 
 - Real-time Notifications
 
 ---
 
-*🤝 Contribution* 
+_Contribution_
 
 We welcome contributions!
 
@@ -112,7 +114,7 @@ Please open issues and submit pull requests with clear, concise commits.
 
 ---
 
-# 🧑‍💻 Developed By
+# Developed By
 
 Campus Event Management System (CEMS) Development Team
 
@@ -133,7 +135,7 @@ Frontend Developer | UI/UX Designer
 
 ---
 
-**📄 License**
+**License**
 
 This project is licensed under the MIT License.
 
